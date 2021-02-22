@@ -1,4 +1,4 @@
-#  Following code takes a matrix and prints the it into the game board
+#  Following code takes a matrix and prints it into the game board
 def print_board(game_matrix):
     print("---------")
     print("|", game_matrix[0][0], game_matrix[0][1], game_matrix[0][2], "|")
@@ -65,6 +65,8 @@ def request_user_move(player):
     return [int(user_move[0]), int(user_move[1])]
 
 
+#  following code block checks whether any player has won, whether there are any illegal entries (probably not possible now that game starts from scratch) or whether game 
+#  should continue
 def check_game_won(game_matrix):
     win_combinations = [[0, 1, 2],
                         [3, 4, 5],
@@ -115,5 +117,3 @@ while check_game_won(game_matrix) == "continue":
     check_game_won(game_matrix)
     user_coord = request_user_move("O")
     update_board(user_coord, "O")
-
-# These win combinations where written for the list need to write this into a check_game function
